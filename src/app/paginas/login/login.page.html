@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="voltarHome()">
+        <ion-icon name="chevron-back-outline"></ion-icon> Voltar        
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="logar()" [formGroup]="credencial">
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text"  required formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">senha</ion-label>
+      <ion-input type="password"  required formControlName="senha"></ion-input>
+    </ion-item>
+    <br>
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Logar</ion-button>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" (click)="irParaRegistro()" expand="block">Cadastre-se</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>

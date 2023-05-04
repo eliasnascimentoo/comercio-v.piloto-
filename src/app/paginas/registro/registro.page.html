@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="voltarHome()">
+        <ion-icon name="chevron-back-outline"></ion-icon> Voltar        
+      </ion-button>
+      
+  </ion-buttons>
+    <ion-title>registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+
+<ion-content [fullscreen]="true">
+
+  <form (ngSubmit)="registrar()" [formGroup]="credencial">
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="email" placeholder="E-mail" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="password" placeholder="senha" formControlName="senha"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block">Cadastrar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

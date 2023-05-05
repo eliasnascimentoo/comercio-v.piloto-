@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { IonicModule, NavController } from '@ionic/angular';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Auth } from '@angular/fire/auth';
+import { AutenticacaoService } from 'src/app/servicos/autenticacao.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginPage implements OnInit {
   credencial!: FormGroup;
   constructor(private nav: NavController,
               private auth: Auth,
-              private fb: FormBuilder) { }
+              private fb: FormBuilder,
+              private service: AutenticacaoService) { }
 
   ngOnInit() {
     this.credencial = this.fb.group({
@@ -37,7 +39,12 @@ export class LoginPage implements OnInit {
     this.nav.navigateBack("home");
   }
 
-  logar(){
-    
-  }
+  async logar(){
+    const user = await this.service.logar(this.credencial.get('email')?.value, this.credencial.get('senha')?.value);
+ if (user){
+   this.nav.navigateForward("perfil");
+ } else {
+   console.log("Erro");
+ }
+ }
 }

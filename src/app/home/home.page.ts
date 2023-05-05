@@ -30,4 +30,6 @@ export class HomePage {
     this.nav.navigateForward('login');
   }
 
+  
+
 }

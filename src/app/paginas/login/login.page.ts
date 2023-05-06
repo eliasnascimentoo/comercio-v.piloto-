@@ -42,6 +42,9 @@ export class LoginPage implements OnInit {
   async logar(){
     const user = await this.service.logar(this.credencial.get('email')?.value, this.credencial.get('senha')?.value);
  if (user){
+   console.log(user.user.email);
+   console.log(user.user.uid);
+   this.service.armazenaUsuarioLogado(user.user.email, user.user.uid);
    this.nav.navigateForward("perfil");
  } else {
    console.log("Erro");

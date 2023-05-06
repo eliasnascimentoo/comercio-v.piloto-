@@ -1,10 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="voltarHome()">
-        <ion-icon name="chevron-back-outline"></ion-icon> Voltar        
-      </ion-button>
-    </ion-buttons>
     <ion-title >
       <ion-icon name="person-outline"></ion-icon>
       Perfil do usuário
@@ -14,20 +9,22 @@
 
 <ion-content>
   
-  <ion-card>
+  <ion-card *ngFor="let c of perfil">
     <ion-card-header>
       <ion-card-title>Olá, seja bem-vindo!</ion-card-title>
+      <!-- Iniciando  e mostrando os dados-->
+      <ion-card-title>{{c.nome}}</ion-card-title>
+    <ion-card-subtitle>{{c.endereco}}</ion-card-subtitle>
+    <ion-card-subtitle>{{c.telefone}}</ion-card-subtitle>
+    <!-- finzaliando  e mostrando os dados-->
     </ion-card-header>
     <ion-card-content>
-      <ion-row>
-        <ion-col>
-          <ion-button expand="block">Alterar E-mail</ion-button>
-        </ion-col>
-        <ion-col>
-          <ion-button expand="block">Alterar senha</ion-button>
-        </ion-col>
-      </ion-row>  
-      
+      <!-- iniciando método-->
+      <ion-card-content>
+        <ion-button (click)="iniciarEdicao(c.id)">Alterar</ion-button>
+        <ion-button>Excluir</ion-button>
+      </ion-card-content>
+      <!-- finalizando método-->
     </ion-card-content>
   </ion-card>
 
@@ -70,14 +67,6 @@
               <ion-label>Item</ion-label>
             </ion-item>
           </ion-list>
-          <ion-row>
-            <ion-col>
-              <ion-button expand="block">Finalizar compras</ion-button>
-            </ion-col>
-            <ion-col>
-              <ion-button expand="block">Excluir carrinho</ion-button>
-            </ion-col>
-          </ion-row>  
         </ion-card-content>
       </ion-card>
     </ion-card-content>

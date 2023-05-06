@@ -6,7 +6,8 @@ import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signO
   providedIn: 'root'
 })
 export class AutenticacaoService {
-  usrLogado: any;
+  usrLogado?: string;
+  idLogado?: string;
 
   constructor(private auth: Auth) { }
 
@@ -14,13 +15,11 @@ export class AutenticacaoService {
     console.log(email);
     console.log(senha);
     const usuario = createUserWithEmailAndPassword(this.auth, email, senha);
-    this.usrLogado = usuario;
     return usuario;
   }
 
   logar(email:any, senha:any){
     const usuario = signInWithEmailAndPassword(this.auth, email,senha);
-    this.usrLogado = usuario;
     return usuario;
   }
 
@@ -28,6 +27,10 @@ export class AutenticacaoService {
     return signOut(this.auth);
   }
 
+  armazenaUsuarioLogado(email: any, id: any){
+    this.usrLogado = email;
+    this.idLogado = id;
+  }
   retornarUsuario(){
     return this.usrLogado;
   }

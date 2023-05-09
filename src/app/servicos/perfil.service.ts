@@ -3,6 +3,7 @@ import { addDoc, doc, collection, collectionData, Firestore, docData, updateDoc 
 import { Observable } from 'rxjs';
 
 export interface Dados{
+  email?: string ;
   id?: string;
   nome: string;
   endereco: string;

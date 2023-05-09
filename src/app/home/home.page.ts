@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicModule, NavController } from '@ionic/angular';
+import { AutenticacaoService } from '../servicos/autenticacao.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { IonicModule, NavController } from '@ionic/angular';
 export class HomePage {
   public progress = 0;
 
-  constructor(private nav: NavController) {
+  constructor(private nav: NavController, private autenticacao: AutenticacaoService ) {
     setInterval(() => {
       this.progress += 0.01;
 
@@ -24,6 +25,7 @@ export class HomePage {
       //}
     }, 50);
   
+    console.log(this.autenticacao.retornarUsuario());
   }
 
   irParaLogin(){

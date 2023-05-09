@@ -14,15 +14,29 @@ import { AutenticacaoService } from 'src/app/servicos/autenticacao.service';
 })
 export class PerfilPage implements OnInit {
   perfil: Dados[] = [];
+  encontrado = {} as Dados;
 
   constructor(private service: DadosService,
     private nav: NavController,
-    private autenticacao: AutenticacaoService) { }
+    private autenticacao: AutenticacaoService) { 
+
+    }
 
   ngOnInit() {
+    
+
     console.log(this.autenticacao.retornarUsuario());
     this.service.listar().subscribe(abc => {
       this.perfil = abc;
+      
+      for (let i=0; i<this.perfil.length; i++){
+        if (this.perfil[i].email === this.autenticacao.retornarUsuario() ){
+          this.encontrado = this.perfil[i];
+          console.log(this.perfil[i].email);
+          console.log(this.encontrado.email);
+          break;
+        }
+      }
       console.log(this.perfil);
     });
   }

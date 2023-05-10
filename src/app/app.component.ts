@@ -22,4 +22,8 @@ export class AppComponent {
   voltarHome(){
     this.nav.navigateBack("home");
 }
+
+irParaLogin(){
+  this.nav.navigateForward('login');
+}
 }

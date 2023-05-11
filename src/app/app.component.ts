@@ -26,4 +26,12 @@ export class AppComponent {
 irParaLogin(){
   this.nav.navigateForward('login');
 }
+
+irParaCarrinho(){
+  this.nav.navigateForward("carrinho");
+}
+
+irParaContato(){
+  this.nav.navigateForward("registro");
+}
 }

@@ -16,16 +16,22 @@ Substituir no app.component.html
             </ion-menu-toggle>
             <ion-menu-toggle>
                 <ion-item (click)="irParaRegistro()">
-                    <ion-icon name="person-sharp" slot="start"></ion-icon>
+                    <ion-icon name="person-outline" slot="start"></ion-icon>
                     <ion-label>Registre-se</ion-label>
                 </ion-item>
               </ion-menu-toggle>
-            <!--  <ion-menu-toggle>
+            <ion-menu-toggle>
                 <ion-item (click)="irParaContato()">
-                    <ion-icon name="person-sharp" slot="start"></ion-icon>
-                    <ion-label>contato</ion-label>
+                    <ion-icon name="cart-outline" slot="start"></ion-icon>
+                    <ion-label>Contato</ion-label>
                 </ion-item>
-              </ion-menu-toggle> -->
+              </ion-menu-toggle>
+              <ion-menu-toggle>
+                <ion-item (click)="irParaCarrinho()">
+                    <ion-icon name="call-outline" slot="start"></ion-icon>
+                    <ion-label>Carrinho</ion-label>
+                </ion-item>
+              </ion-menu-toggle>
         </ion-list>
     </ion-content>
 </ion-menu>  

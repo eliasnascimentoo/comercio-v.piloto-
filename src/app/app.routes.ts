@@ -25,6 +25,14 @@ export const routes: Routes = [
   {
     path: 'incluirdados',
     loadComponent: () => import('./paginas/incluirdados/incluirdados.page').then( m => m.IncluirdadosPage)
+  },
+  {
+    path: 'carrinho',
+    loadComponent: () => import('./paginas/carrinho/carrinho.page').then( m => m.CarrinhoPage)
+  },
+  {
+    path: 'contato',
+    loadComponent: () => import('./paginas/contato/contato.page').then( m => m.ContatoPage)
   }
 
 ];

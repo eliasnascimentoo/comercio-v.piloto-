@@ -21,7 +21,7 @@ export class IncluirdadosPage implements OnInit {
               private rota: ActivatedRoute) {
     this.dados = {
       'nome': '', 
-      'endereco': '', 
+      'endereco': '',   
       'telefone': '' 
     };
           

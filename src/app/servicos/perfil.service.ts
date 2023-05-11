@@ -14,6 +14,9 @@ export interface Dados{
   providedIn: 'root'
 })
 export class DadosService {
+  excluir(id: any) {
+    throw new Error('Method not implemented.');
+  }
 
   colecao: string = "dados";
   constructor(private firestore: Firestore) { }

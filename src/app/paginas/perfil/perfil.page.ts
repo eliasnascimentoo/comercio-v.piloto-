@@ -41,8 +41,12 @@ export class PerfilPage implements OnInit {
     });
   }
   iniciarEdicao(id:any){
-    this.nav.navigateForward(["incluirperfil",
-     {idperfil: id}]);
+    this.nav.navigateForward(["incluirdados",
+     {iddados: id}]);
+  }
+
+  voltarHome(){
+    this.nav.navigateBack("home");
   }
   
 }

@@ -31,7 +31,11 @@ irParaCarrinho(){
   this.nav.navigateForward("carrinho");
 }
 
+irParaListacmp(){
+  this.nav.navigateForward("listacmp");
+}
+
 irParaContato(){
-  this.nav.navigateForward("registro");
+  this.nav.navigateForward("contato");
 }
 }

@@ -13,6 +13,7 @@ import { Materiais, MateriaisService } from 'src/app/servicos/materiais.service'
 })
 export class ListacmpPage implements OnInit {
   listacmp: Materiais[] = [];
+  ids: any = '';
 
   constructor(private service:MateriaisService,
               private nav: NavController,
@@ -26,4 +27,9 @@ this.service.listar().subscribe(abc => {
 
   }
 
+  Comprar(id:any){
+    this.ids += id + "-";
+    console.log(this.ids);
+      //this.nav.navigateForward("");
+  }
 }

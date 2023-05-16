@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AlertController, IonicModule, NavController } from '@ionic/angular';
 import { Materiais, MateriaisService } from 'src/app/servicos/materiais.service';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-listacmp',
@@ -17,7 +18,7 @@ export class ListacmpPage implements OnInit {
 
   constructor(private service:MateriaisService,
               private nav: NavController,
-              private alerta: AlertController) { }
+              private alerta: AlertController, private comp: AppComponent) { }
 
   ngOnInit() {
 this.service.listar().subscribe(abc => {
@@ -30,6 +31,7 @@ this.service.listar().subscribe(abc => {
   Comprar(id:any){
     this.ids += id + "-";
     console.log(this.ids);
+    this.comp.idProduto = this.ids;
       //this.nav.navigateForward("");
   }
 }

@@ -19,8 +19,8 @@ export class CarrinhoService {
   constructor(private firestore: Firestore) { }
 
   cadastrar(obj: any) {
-    const contatos = collection(this.firestore, this.colecao);
-    return addDoc(contatos, obj);
+    const listacmp = collection(this.firestore, this.colecao);
+    return addDoc(listacmp, obj);
   }  
 
   listar():Observable<Materiais[]>{
@@ -44,8 +44,8 @@ export class CarrinhoService {
       this.colecao + '/' + obj.id );
 
     return updateDoc(listacmp, {
-      nome: obj.nome, email: obj.email, 
-      telefone: obj.telefone
+      nome: obj.nome, cor: obj.cor, 
+      preco: obj.preco
     });  
   }
 

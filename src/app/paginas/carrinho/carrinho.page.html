@@ -10,11 +10,17 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">carrinho</ion-title>
+      <ion-title size="large">Carrinho</ion-title>
     </ion-toolbar>
   </ion-header>
-
-    
+  <ion-card *ngFor="let m of listacmp; let i = index">
+    <ion-card-title>{{m.nome}}</ion-card-title>
+    <ion-card-subtitle>{{m.cor}}</ion-card-subtitle>
+    <ion-card-subtitle>{{m.preco}}</ion-card-subtitle>
+    <ion-card-content>
+      <ion-button (click)="excluir(i)">Excluir</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 

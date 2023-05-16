@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { collectionData, Firestore } from '@angular/fire/firestore';
-import { collection } from 'firebase/firestore';
+import { collectionData, docData, Firestore } from '@angular/fire/firestore';
+import { collection, doc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { ListacmpPage } from '../paginas/listacmp/listacmp.page';
 
@@ -25,5 +25,13 @@ export class MateriaisService {
                      this.colecao );
     return collectionData(materias,
        {idField:'id'}) as Observable<Materiais[]>;
+  }
+
+  buscar(id: any):Observable<Materiais> {
+    const listacmp = doc(this.firestore,
+      this.colecao + '/' +id);
+      
+      return docData(listacmp, 
+        {idField: 'id'}) as Observable<Materiais>;
   }
 }

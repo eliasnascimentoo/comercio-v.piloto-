@@ -9,6 +9,8 @@ import { IonicModule, NavController } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class AppComponent {
+  idProduto: any= '';
+
   constructor(private nav: NavController) {}
 
   irParaRegistro(){
@@ -28,7 +30,8 @@ irParaLogin(){
 }
 
 irParaCarrinho(){
-  this.nav.navigateForward("carrinho");
+  console.log("Ids do Componente = " + this.idProduto);
+  this.nav.navigateForward(["carrinho", {idmateriais: this.idProduto}]);
 }
 
 irParaListacmp(){

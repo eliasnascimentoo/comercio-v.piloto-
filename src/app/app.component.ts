@@ -41,4 +41,5 @@ irParaListacmp(){
 irParaContato(){
   this.nav.navigateForward("contato");
 }
+
 }

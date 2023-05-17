@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Formulário de Compra
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input type="text" [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Data de Nascimento</ion-label>
+      <ion-input type="text" [(ngModel)]="nascimento"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">CPF</ion-label>
+      <ion-input type="text" [(ngModel)]="cpf"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Número do Cartão de Crédito</ion-label>
+      <ion-input type="text" [(ngModel)]="numerocartao"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Data de Vencimento do Cartão</ion-label>
+      <ion-input type="text" [(ngModel)]="validade"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Código de Segurança</ion-label>
+      <ion-input type="text" [(ngModel)]="cvc"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Endereço de Cobrança</ion-label>
+      <ion-input type="text" [(ngModel)]="endereco"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <div class="ion-padding">
+    <ion-button expand="full" (click)="finalizarCompra()">Finalizar Compra</ion-button>
+  </div>
+</ion-content>

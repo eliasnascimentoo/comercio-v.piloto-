@@ -37,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'listacmp',
     loadComponent: () => import('./paginas/listacmp/listacmp.page').then( m => m.ListacmpPage)
+  },
+  {
+    path: 'pagamento',
+    loadComponent: () => import('./paginas/pagamento/pagamento.page').then( m => m.PagamentoPage)
   }
 
 ];

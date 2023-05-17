@@ -65,6 +65,9 @@ export class CarrinhoPage implements OnInit {
     await mensagem.present();
     //  this.service.excluir(id);
     }
+    finalizarCompra(){
+      this.nav.navigateForward('pagamento');
+    }
 }
 
 

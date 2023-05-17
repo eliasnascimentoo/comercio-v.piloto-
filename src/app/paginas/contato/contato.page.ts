@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-contato',
@@ -12,9 +13,12 @@ import { IonicModule } from '@ionic/angular';
 })
 export class ContatoPage implements OnInit {
 
-  constructor() { }
+  constructor(private nav: NavController) { }
 
   ngOnInit() {
   }
 
+  finalizarCompra(){
+    this.nav.navigateForward('pagamento')
+  }
 }

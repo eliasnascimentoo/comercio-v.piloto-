@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>contato</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,4 +13,68 @@
       <ion-title size="large">contato</ion-title>
     </ion-toolbar>
   </ion-header>
+
+
+
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="Number" required></ion-input>
+    </ion-item>
+    <!-- Radio buttons -->
+    <ion-radio-group lines="full">
+      <ion-list-header>
+        <ion-label>Genero</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio slot="start" value="masculino" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio slot="start" value="feminino"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <!-- Checkboxes -->
+    <ion-list lines="full">
+      <ion-list-header>
+        <ion-label>Subjects</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Bugs</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Problemas com compra</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Problemas com login</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-textarea
+          placeholder="Escreva algo aqui ou um problema especifico"
+          [autoGrow]="true"
+          value=
+        >
+        </ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
 </ion-content>
